@@ -16,7 +16,11 @@ Plan:
 6. Implement functionality with JavaScript
 7. Implement a color theme switch
 
-#Problems/learnings along the way: The design implementaion took a bit longer than expected. Espacially the responsivnes was tricky to implement. I had to play around with different media query breakpoints and proper css styling for the svgs in order to get the sizing of each "player card" rigth, so they sit nice and smooth on all screen sizes. One issue could be the different intrinsict sizes and ratios of the svgs. There was some unexpected behaviour with css grid and the positioning of the items. The svg's collapsed/dissapeared, when I put on display grid on the player card container and placed the items. I had to explicitly set the width for the svgs, but this may be due to the grid algorithm. The trickiest part, was the little "player point details box" which indicates the current score of each player. After some struggles with choosing the right markup and css styling, I decided to use divs for each bracket with the pseudo after element alongside flexbox, which gave me the best result.
+#Problems/learnings along the way: The design implementaion took a bit longer than expected. Espacially the responsivnes was tricky to implement. I had to play around with different media query breakpoints and proper css styling for the svgs in order to get the sizings of the elements rigth, so they sit nice and smooth on all screen sizes. The svgs have different intrinsict sizes, which led to some weird missalignment of the svg boxes and the layout on desktop looked a bit of.
+
+There was some unexpected behaviour the svgs in firefox. The svg's collapsed/dissapeared, when I put on display grid on the player card container, placed the items, as long as the size was set in %. I had to explicitly set the width for the svgs to make it worked. But the donwside is, that the size of the svgs wasnt dynamic/responsive.
+
+The little "player points details box" which indicates the current score of each player was also tricky to implement. After some struggles with choosing the right markup and css styling, I decided to use divs for each bracket with the pseudo after element alongside flexbox, which gave me the best result.
 
 #game logic:
 Build a rock-paper-scissors game:
