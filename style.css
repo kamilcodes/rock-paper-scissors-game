@@ -128,7 +128,7 @@ body {
   background-color: var(--primary-black-300);
 }
 
-@media (min-width: 920px) {
+@media (min-width: 57.5em) {
   body {
     display: grid;
     place-items: center;
@@ -149,7 +149,7 @@ body {
   gap: 1.5rem;
 }
 
-@media (min-width: 920px) {
+@media (min-width: 57.5em) {
   .game-container {
     grid-template-columns: 2fr 1fr 2fr;
     grid-template-rows: 1fr;
@@ -177,7 +177,7 @@ body {
   gap: 1rem;
   border-radius: 20px;
 }
-@media (min-width: 920px) {
+@media (min-width: 57.5em) {
   .player-card {
     width: 100%;
   }
@@ -234,7 +234,7 @@ body {
   box-shadow: var(--box-shadow-700);
 }
 
-@media (min-width: 920px) {
+@media (min-width: 57.5em) {
   .player-card__hand {
     width: 90%;
   }
