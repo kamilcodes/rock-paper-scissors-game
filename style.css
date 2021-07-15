@@ -122,9 +122,6 @@ h1 {
 /* !!!!!!!!!! LAYOUT !!!!!!!!!! */
 
 body {
-  display: grid;
-  place-items: center;
-  padding: 5vw;
   background-color: var(--primary-black-300);
 }
 
@@ -140,13 +137,14 @@ body {
 .game-container {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  align-items: center;
+  align-content: center;
   justify-items: center;
-  width: clamp(300px, 90%, 1000px);
+  width: clamp(350px, 80%, 1000px);
   max-width: 500px;
   max-height: 100vh;
   padding: 2rem;
   gap: 1.5rem;
+  margin: auto auto;
 }
 
 @media (min-width: 57.5em) {
@@ -171,15 +169,17 @@ body {
   grid-template-rows: min-content 1fr;
   justify-items: center;
   align-items: center;
-  width: 90%;
+  width: 80%;
 
   padding: 1rem;
   gap: 1rem;
   border-radius: 20px;
+  box-shadow: var(--box-shadow-700);
 }
 @media (min-width: 57.5em) {
   .player-card {
     width: 100%;
+    box-shadow: none;
   }
 }
 
@@ -191,8 +191,9 @@ body {
 }
 
 .player-card__title {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   color: var(--primary-black-700);
+  width: max-content;
 }
 
 .player-card__points {
@@ -222,28 +223,32 @@ body {
 }
 
 .player-card__hand {
-  padding: 1rem;
-  height: 100%;
-  /* max-height: 200px; */
   color: var(--primary-black-300);
   background-color: var(--secondary-light-grey);
+  width: 80%;
+  padding: 1rem;
   border-radius: 20px;
+
   display: grid;
   align-items: center;
   justify-content: center;
   box-shadow: var(--box-shadow-700);
 }
 
+.hand-img {
+  aspect-ratio: 4/3;
+  width: 25vw;
+  color: var(--primary-black-300);
+}
+
 @media (min-width: 57.5em) {
   .player-card__hand {
     width: 90%;
   }
-}
 
-.hand-img {
-  width: 100%;
-  height: 100%;
-  color: var(--primary-black-300);
+  .hand-img {
+    width: 30vw;
+  }
 }
 
 .btn-play {
