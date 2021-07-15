@@ -262,4 +262,10 @@ body {
   border: none;
   border-radius: 10px;
   box-shadow: var(--box-shadow-700);
+  cursor: pointer;
+}
+
+.btn-play:active {
+  transform: translateY(2px);
+  box-shadow: none;
 }
