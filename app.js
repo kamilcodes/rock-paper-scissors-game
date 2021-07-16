@@ -17,6 +17,7 @@ function getRandomHandPlayer1() {
   let randomNumber = Math.floor(Math.random() * hands.length);
   let hand = hands[randomNumber];
   currentHandPlayer1 = hand;
+  //   console.log("Player1:" + currentHandPlayer1);
   if (currentHandPlayer1 === "rock") {
     player1Hand.src = "assets/hand-rock-regular.svg";
   } else if (currentHandPlayer1 === "paper") {
@@ -29,6 +30,7 @@ function getRandomHandPlayer2() {
   let randomNumber = Math.floor(Math.random() * hands.length);
   let hand = hands[randomNumber];
   currentHandPlayer2 = hand;
+  //   console.log("Player2:" + currentHandPlayer2);
   if (currentHandPlayer1 === "rock") {
     player2Hand.src = "assets/hand-rock-regular.svg";
   } else if (currentHandPlayer2 === "paper") {
