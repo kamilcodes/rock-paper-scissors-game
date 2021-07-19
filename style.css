@@ -216,6 +216,24 @@ body {
   position: absolute;
   width: 70%;
   height: 70%;
+  background-color: var(--secondary-light-grey);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.player-card__point--wins {
+  border: 4px solid var(--primary-black-700);
+  width: 1.8rem;
+  margin-left: -4px;
+  position: relative;
+  background-color: var(--secondary-light-grey);
+}
+
+.player-card__point--wins::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
   background-color: var(--primary-green);
   left: 50%;
   top: 50%;
@@ -239,6 +257,10 @@ body {
   aspect-ratio: 4/3;
   width: 25vw;
   color: var(--primary-black-300);
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 @media (min-width: 57.5em) {
