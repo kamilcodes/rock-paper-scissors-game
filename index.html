@@ -15,7 +15,7 @@
   <body>
     <h1>Rock, Paper, Scissors</h1>
     <div class="game-container">
-      <div class="player-card">
+      <div class="player-card player-card--1">
         <header class="player-card__header">
           <h2 class="player-card__title">Player 1</h2>
           <div class="player-card__points">
@@ -25,7 +25,11 @@
           </div>
         </header>
         <div class="player-card__hand" id="player1-hand-box">
-          <!-- Rock, Paper, Scissors... -->
+          <p class="player-card__text" id="player-card-text--1">
+            <span class="player-card__text-item">Rock</span
+            ><span class="player-card__text-item">Paper</span
+            ><span class="player-card__text-item">Scissors</span>
+          </p>
           <img
             src="assets/hand-scissors-regular.svg"
             alt="hand-icon"
@@ -34,8 +38,13 @@
           />
         </div>
       </div>
-      <button class="btn-play" id="btn-play">Play</button>
-      <div class="player-card">
+      <div class="flex-container">
+        <button class="btn-play" id="btn-play">Play</button>
+        <button class="btn-new-game" id="btn-new-game">
+          <img src="assets/icons8-restart.svg" alt="restart game" />
+        </button>
+      </div>
+      <div class="player-card player-card--2">
         <header class="player-card__header">
           <h2 class="player-card__title">Player 2</h2>
           <div class="player-card__points">
@@ -45,7 +54,11 @@
           </div>
         </header>
         <div class="player-card__hand" id="player2-hand-box">
-          <!-- Rock, Paper, Scissors... -->
+          <p class="player-card__text" id="player-card-text--2">
+            <span class="player-card__text-item">Rock</span
+            ><span class="player-card__text-item">Paper</span
+            ><span class="player-card__text-item">Scissors</span>
+          </p>
           <img
             src="assets/hand-paper-regular.svg"
             alt="hand-icon"

@@ -1,8 +1,11 @@
 // DOM elements:
 const btnPlay = document.getElementById("btn-play");
+const btnNewGame = document.getElementById("btn-new-game");
 const handImage = document.querySelectorAll(".hand-img");
 const player1HandBox = document.getElementById("player1-hand-box");
 const player2HandBox = document.getElementById("player2-hand-box");
+const playerCardText1 = document.getElementById("player-card-text--1");
+const playerCardText2 = document.getElementById("player-card-text--2");
 const player1Hand = document.getElementById("player1-hand");
 const player2Hand = document.getElementById("player2-hand");
 const player1Point1 = document.getElementById("player-1-point--1");
@@ -27,6 +30,7 @@ let player1Wins3rdRound = false;
 let player2Wins3rdRound = false;
 
 // Game Functionality:
+
 function getRandomHands() {
   getRandomHandPlayer1();
   getRandomHandPlayer2();
@@ -161,6 +165,16 @@ function addPoint() {
   }
 }
 
+// remove points:
+function removePoints() {
+  player1Point1.classList.remove("player-card__point--wins");
+  player1Point2.classList.remove("player-card__point--wins");
+  player1Point3.classList.remove("player-card__point--wins");
+  player2Point1.classList.remove("player-card__point--wins");
+  player2Point2.classList.remove("player-card__point--wins");
+  player2Point3.classList.remove("player-card__point--wins");
+}
+
 // Check if a player has 3 wins:
 function winsGame() {
   if (
@@ -194,8 +208,25 @@ function showHands() {
   player2Hand.classList.remove("hidden");
 }
 
+function hideHands() {
+  player1Hand.classList.add("hidden");
+  player2Hand.classList.add("hidden");
+}
+
+function hideText() {
+  playerCardText1.classList.add("hidden");
+  playerCardText2.classList.add("hidden");
+}
+
+function showText() {
+  playerCardText1.classList.remove("hidden");
+  playerCardText2.classList.remove("hidden");
+}
+
+// Start Game & get new random hand
 btnPlay.addEventListener("click", function play() {
   if (playing === true) {
+    hideText();
     showHands();
     setWinsToFalse();
     getRandomHands();
@@ -203,4 +234,22 @@ btnPlay.addEventListener("click", function play() {
     addPoint();
     winsGame();
   }
+});
+
+// restart game:
+btnNewGame.addEventListener("click", function () {
+  showText();
+  hideHands();
+  removePoints();
+  currentHandPlayer1 = "";
+  currentHandPlayer2 = "";
+  player1WinsRound = false;
+  player2WinsRound = false;
+  playing = true;
+  player1Wins1stRound = false;
+  player2Wins1stRound = false;
+  player1Wins2ndRound = false;
+  player2Wins2ndRound = false;
+  player1Wins3rdRound = false;
+  player2Wins3rdRound = false;
 });
