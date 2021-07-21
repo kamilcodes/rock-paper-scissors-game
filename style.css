@@ -143,7 +143,7 @@ body {
   justify-items: center;
   width: clamp(350px, 80%, 1000px);
   max-width: 500px;
-  max-height: 100vh;
+  max-height: 90vh;
   padding: 2rem;
   gap: 1.5rem;
   margin: 1rem auto;
@@ -291,9 +291,14 @@ body {
 
 .hand-img {
   aspect-ratio: 4/3;
-
-  height: 100%;
+  height: 80%;
+  width: 80%;
   color: var(--primary-black-300);
+  position: absolute;
+  /* margin: 0 auto; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hidden {
