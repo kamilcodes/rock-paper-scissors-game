@@ -280,6 +280,10 @@ body {
   }
 }
 
+.player-card--winner {
+  background-color: var(--primary-green);
+}
+
 .player-card__text {
   color: var(--primary-black-700);
   font-size: clamp(1.6rem, 3vw, 2.4rem);
@@ -287,6 +291,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
   grid-template-rows: repeat(3, 1fr);
+  transition: all 0.3s ease;
 }
 
 .hand-img {
@@ -299,10 +304,12 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: all 0.3s ease;
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
 }
 
 @media (min-width: 57.5em) {

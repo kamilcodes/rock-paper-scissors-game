@@ -2,6 +2,8 @@
 const btnPlay = document.getElementById("btn-play");
 const btnNewGame = document.getElementById("btn-new-game");
 const handImage = document.querySelectorAll(".hand-img");
+const playerCard1 = document.getElementById("player-card--1");
+const playerCard2 = document.getElementById("player-card--2");
 const player1HandBox = document.getElementById("player1-hand-box");
 const player2HandBox = document.getElementById("player2-hand-box");
 const playerCardText1 = document.getElementById("player-card-text--1");
@@ -184,6 +186,7 @@ function winsGame() {
     // stop get randnom number
     playing = false;
     btnPlay.classList.add("btn-play--inactive");
+    playerCard1.classList.add("player-card--winner");
   } else if (
     player2Wins1stRound === true &&
     player2Wins2ndRound === true &&
@@ -193,6 +196,7 @@ function winsGame() {
     // stop get randnom number
     playing = false;
     btnPlay.classList.add("btn-play--inactive");
+    playerCard2.classList.add("player-card--winner");
   }
 }
 
@@ -242,6 +246,8 @@ btnNewGame.addEventListener("click", function () {
   hideHands();
   removePoints();
   btnPlay.classList.remove("btn-play--inactive");
+  playerCard1.classList.remove("player-card--winner");
+  playerCard2.classList.remove("player-card--winner");
   currentHandPlayer1 = "";
   currentHandPlayer2 = "";
   player1WinsRound = false;
