@@ -271,7 +271,7 @@ body {
 }
 
 .player-card__text {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
   font-weight: 900;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
