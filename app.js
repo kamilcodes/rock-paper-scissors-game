@@ -43,18 +43,16 @@ function getRandomHandPlayer1() {
   console.log("Player1:" + currentHandPlayer1);
   if (currentHandPlayer1 === "rock") {
     // player1HandBox.innerHTML = "ROCK";
-    player1Hand.src = "assets/hand-rock-regular.svg";
+    player1Hand.src = "assets/hand-rock-small.svg";
   } else if (currentHandPlayer1 === "paper") {
     // player1HandBox.innerHTML = "PAPER";
-    player1Hand.src = "assets/hand-paper-regular.svg";
+    player1Hand.src = "assets/hand-paper-small.svg";
   } else if (currentHandPlayer1 === "scissors") {
     // player1HandBox.innerHTML = "SCISSORS";
-    player1Hand.src = "assets/hand-scissors-regular.svg";
-  } else if (currentHandPlayer1 === "rock") {
-    // player2HandBox.innerHTML = "ROCK";
-    player2Hand.src = "assets/hand-rock-regular.svg";
+    player1Hand.src = "assets/hand-scissors-small.svg";
   }
 }
+
 function getRandomHandPlayer2() {
   let randomNumber = Math.floor(Math.random() * hands.length);
   let hand = hands[randomNumber];
@@ -62,13 +60,13 @@ function getRandomHandPlayer2() {
   console.log("Player2:" + currentHandPlayer2);
   if (currentHandPlayer2 === "rock") {
     // player2HandBox.innerHTML = "ROCK";
-    player2Hand.src = "assets/hand-rock-regular.svg";
+    player2Hand.src = "assets/hand-rock-small.svg";
   } else if (currentHandPlayer2 === "paper") {
     // player2HandBox.innerHTML = "PAPER";
-    player2Hand.src = "assets/hand-paper-regular.svg";
+    player2Hand.src = "assets/hand-paper-small.svg";
   } else if (currentHandPlayer2 === "scissors") {
     // player2HandBox.innerHTML = "SCISSORS";
-    player2Hand.src = "assets/hand-scissors-regular.svg";
+    player2Hand.src = "assets/hand-scissors-small.svg";
   }
 }
 
@@ -185,6 +183,7 @@ function winsGame() {
     // display modal: PLayer 1 Wins
     // stop get randnom number
     playing = false;
+    btnPlay.classList.add("btn-play--inactive");
   } else if (
     player2Wins1stRound === true &&
     player2Wins2ndRound === true &&
@@ -193,6 +192,7 @@ function winsGame() {
     // display modal: PLayer 2 Wins
     // stop get randnom number
     playing = false;
+    btnPlay.classList.add("btn-play--inactive");
   }
 }
 
@@ -241,6 +241,7 @@ btnNewGame.addEventListener("click", function () {
   showText();
   hideHands();
   removePoints();
+  btnPlay.classList.remove("btn-play--inactive");
   currentHandPlayer1 = "";
   currentHandPlayer2 = "";
   player1WinsRound = false;

@@ -3,6 +3,7 @@
   --primary-black-700: hsl(0, 0%, 0%);
   --primary-black-300: hsl(240, 2%, 18%);
   --primary-green: hsl(134, 59%, 40%);
+  --primary-green-300: hsl(134, 50%, 20%);
   --secondary-light-grey: hsl(0, 0%, 93%);
 
   /* SHADOWS */
@@ -145,7 +146,7 @@ body {
   max-height: 100vh;
   padding: 2rem;
   gap: 1.5rem;
-  margin: auto auto;
+  margin: 1rem auto;
 }
 
 @media (min-width: 57.5em) {
@@ -170,7 +171,7 @@ body {
   grid-template-rows: min-content 1fr;
   justify-items: center;
   align-items: center;
-  width: 80%;
+  width: 90%;
 
   padding: 1rem;
   gap: 1rem;
@@ -258,20 +259,30 @@ body {
 }
 
 .player-card__hand {
+  position: relative;
   color: var(--primary-black-300);
   background-color: var(--secondary-light-grey);
   width: 80%;
+  min-height: 25vh;
   padding: 1rem;
   border-radius: 20px;
-
+  box-shadow: var(--box-shadow-700);
   display: grid;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--box-shadow-700);
+}
+
+@media (min-width: 57.5em) {
+  .player-card__hand {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .player-card__text {
-  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  color: var(--primary-black-700);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 900;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
@@ -280,7 +291,8 @@ body {
 
 .hand-img {
   aspect-ratio: 4/3;
-  width: 25vw;
+
+  height: 100%;
   color: var(--primary-black-300);
 }
 
@@ -294,7 +306,7 @@ body {
   }
 
   .hand-img {
-    width: 30vw;
+    width: 28vw;
   }
 }
 
@@ -305,7 +317,7 @@ body {
   text-transform: uppercase;
   display: inline-block;
   padding: 0.5rem 3.5rem;
-  background-color: #2aa146;
+  background-color: var(--primary-green);
   border: none;
   border-radius: 10px;
   box-shadow: var(--box-shadow-700);
@@ -322,6 +334,17 @@ body {
   box-shadow: none;
 }
 
+.btn-play--inactive {
+  background-color: var(--primary-green-300);
+  cursor: initial;
+}
+
+.btn-play--inactive:active {
+  transform: translateY(0);
+  box-shadow: none;
+  cursor: initial;
+}
+
 .btn-new-game {
   font-size: 1.6rem;
   font-weight: 900;
@@ -332,7 +355,7 @@ body {
   padding: 0.5rem 1rem;
   background-color: var(--primary-green);
   box-shadow: var(--box-shadow-700);
-
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
