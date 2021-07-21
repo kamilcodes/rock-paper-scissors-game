@@ -22,6 +22,8 @@ There was some unexpected behaviour with the svgs in firefox (but not in chrome)
 
 The little "player points details box" which indicates the current score of each player was also tricky to implement. After some struggles with choosing the right markup and css styling, I decided to use divs for each bracket with the pseudo after element alongside flexbox, which gave me the best result.
 
+When debbuging code, always check for typos first and make sure the variable naming is self explaining. I wasted a lot of time searching for mistakes in the code and the logic, and it turned out that I used the wrong variable.
+
 #game logic:
 Build a rock-paper-scissors game:
 
