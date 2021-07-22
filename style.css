@@ -212,6 +212,18 @@ body {
   font-size: clamp(1.5rem, 3vw, 2rem);
   color: var(--primary-black-700);
   width: max-content;
+  margin-right: 0.5rem;
+}
+
+@supports (display: flex) and (gap: 0.5rem) {
+  .player-card__header {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .player-card__title {
+    margin-right: 0;
+  }
 }
 
 .player-card__points {
