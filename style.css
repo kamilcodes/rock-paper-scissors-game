@@ -159,6 +159,7 @@ body {
     background-color: var(--primary-grey);
     border-radius: 20px;
     max-width: 1000px;
+    min-width: min-content;
     min-height: 60vh;
     box-shadow: var(--box-shadow-700);
   }
@@ -209,7 +210,7 @@ body {
 }
 
 .player-card__title {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: calc(1rem + 2vw);
   color: var(--primary-black-700);
   width: max-content;
   margin-right: 0.5rem;
@@ -218,7 +219,7 @@ body {
 @supports (display: flex) and (gap: 0.5rem) {
   .player-card__header {
     display: flex;
-    gap: 0.5rem;
+    gap: 1.5vw;
   }
 
   .player-card__title {
@@ -228,9 +229,8 @@ body {
 
 .player-card__points {
   display: flex;
-
   padding: 2px;
-  height: 2rem;
+  min-height: 2rem;
 }
 
 .player-card__point {
@@ -274,7 +274,7 @@ body {
   position: relative;
   color: var(--primary-black-300);
   background-color: var(--secondary-light-grey);
-  width: 80%;
+  min-width: 80%;
   min-height: 25vh;
   padding: 1rem;
   border-radius: 20px;
@@ -298,7 +298,7 @@ body {
 
 .player-card__text {
   color: var(--primary-black-700);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: calc(1rem + 1vw);
   font-weight: 900;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
@@ -308,8 +308,8 @@ body {
 
 .hand-img {
   aspect-ratio: 4/3;
-  height: 80%;
-  width: 80%;
+  min-height: 80%;
+  max-width: 80%;
   color: var(--primary-black-300);
   position: absolute;
   /* margin: 0 auto; */
@@ -326,7 +326,7 @@ body {
 
 @media (min-width: 57.5em) {
   .player-card__hand {
-    width: 90%;
+    max-width: 90%;
   }
 
   .hand-img {
@@ -335,7 +335,7 @@ body {
 }
 
 .btn-play {
-  font-size: 1.6rem;
+  font-size: calc(1rem + 1vw);
   font-weight: 900;
   color: var(--primary-black-700);
   text-transform: uppercase;
@@ -346,10 +346,8 @@ body {
   border-radius: 10px;
   box-shadow: var(--box-shadow-700);
   cursor: pointer;
-
   grid-row: 2 / 3;
   grid-column: 1 / 2;
-
   transition: all 0.3s ease;
 }
 
